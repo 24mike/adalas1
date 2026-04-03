@@ -1,0 +1,520 @@
+import type { Store, Product, Testimonial, LookbookSlide } from '@/types';
+
+// Store Configurations
+export const stores: Store[] = [
+  {
+    id: 'bellavie',
+    name: 'BellaVie',
+    tagline: 'Elegant fashion for the modern woman',
+    description: 'Timeless elegance meets contemporary trends. Discover dresses designed for the modern woman.',
+    logo: 'BellaVie',
+    primaryColor: '#fb8c81',
+    secondaryColor: '#e07a70',
+    heroImage: '/hero-model.jpg',
+    aboutImage: '/about-image.jpg',
+    lookbookImages: ['/lookbook-1.jpg', '/lookbook-2.jpg', '/lookbook-3.jpg'],
+    instagramImages: ['/instagram-1.jpg', '/instagram-2.jpg', '/instagram-3.jpg', '/instagram-4.jpg'],
+    features: [
+      {
+        id: 1,
+        title: 'Premium Quality',
+        description: 'Crafted from the finest fabrics with attention to every detail, ensuring lasting elegance.',
+        icon: 'Gem',
+      },
+      {
+        id: 2,
+        title: 'Sustainable Fashion',
+        description: 'Eco-friendly materials and ethical production practices for a better tomorrow.',
+        icon: 'Leaf',
+      },
+      {
+        id: 3,
+        title: 'Perfect Fit',
+        description: 'Sizes for every body type with detailed sizing guides to help you find your ideal fit.',
+        icon: 'Ruler',
+      },
+      {
+        id: 4,
+        title: 'Fast Shipping',
+        description: 'Free delivery on orders over $75 with easy returns within 30 days.',
+        icon: 'Truck',
+      },
+    ],
+  },
+  {
+    id: 'urbanedge',
+    name: 'UrbanEdge',
+    tagline: 'Street style redefined',
+    description: 'Bold, edgy fashion for the urban explorer. Make a statement with every step.',
+    logo: 'UrbanEdge',
+    primaryColor: '#6366f1',
+    secondaryColor: '#4f46e5',
+    heroImage: '/urban-hero.jpg',
+    aboutImage: '/urban-about.jpg',
+    lookbookImages: ['/urban-lookbook-1.jpg', '/urban-lookbook-2.jpg', '/urban-lookbook-3.jpg'],
+    instagramImages: ['/urban-insta-1.jpg', '/urban-insta-2.jpg', '/urban-insta-3.jpg', '/urban-insta-4.jpg'],
+    features: [
+      {
+        id: 1,
+        title: 'Street Certified',
+        description: 'Designed by urban fashion experts who understand the pulse of the city.',
+        icon: 'Gem',
+      },
+      {
+        id: 2,
+        title: 'Limited Drops',
+        description: 'Exclusive collections released in limited quantities for true uniqueness.',
+        icon: 'Leaf',
+      },
+      {
+        id: 3,
+        title: 'Custom Fits',
+        description: 'Tailored silhouettes that flatter every body type and style preference.',
+        icon: 'Ruler',
+      },
+      {
+        id: 4,
+        title: 'Express Delivery',
+        description: 'Same-day delivery in major cities. Get your style fix instantly.',
+        icon: 'Truck',
+      },
+    ],
+  },
+  {
+    id: 'bohemiansoul',
+    name: 'Bohemian Soul',
+    tagline: 'Free spirit, timeless style',
+    description: 'Embrace your inner wanderer with our collection of bohemian-inspired pieces.',
+    logo: 'Bohemian Soul',
+    primaryColor: '#d4a574',
+    secondaryColor: '#b8935f',
+    heroImage: '/boho-hero.jpg',
+    aboutImage: '/boho-about.jpg',
+    lookbookImages: ['/boho-lookbook-1.jpg', '/boho-lookbook-2.jpg', '/boho-lookbook-3.jpg'],
+    instagramImages: ['/boho-insta-1.jpg', '/boho-insta-2.jpg', '/boho-insta-3.jpg', '/boho-insta-4.jpg'],
+    features: [
+      {
+        id: 1,
+        title: 'Handcrafted',
+        description: 'Each piece is lovingly handmade by artisans using traditional techniques.',
+        icon: 'Gem',
+      },
+      {
+        id: 2,
+        title: 'Sustainable',
+        description: 'Organic fabrics and eco-friendly dyes that honor Mother Earth.',
+        icon: 'Leaf',
+      },
+      {
+        id: 3,
+        title: 'One Size Flow',
+        description: 'Flowing, adjustable designs that embrace all body shapes beautifully.',
+        icon: 'Ruler',
+      },
+      {
+        id: 4,
+        title: 'Worldwide Shipping',
+        description: 'Free global shipping on orders over $100. Bring boho to your doorstep.',
+        icon: 'Truck',
+      },
+    ],
+  },
+];
+
+// Products for each store
+export const allProducts: Product[] = [
+  // BellaVie Products (Elegant Dresses)
+  {
+    id: 1,
+    storeId: 'bellavie',
+    name: 'Floral Print Dress',
+    price: 45,
+    originalPrice: 55,
+    image: '/product-1.jpg',
+    category: 'casual',
+    isSale: true,
+  },
+  {
+    id: 2,
+    storeId: 'bellavie',
+    name: 'Maxi Dress',
+    price: 65,
+    image: '/product-2.jpg',
+    category: 'formal',
+    isNew: true,
+  },
+  {
+    id: 3,
+    storeId: 'bellavie',
+    name: 'Bodycon Dress',
+    price: 40,
+    image: '/product-3.jpg',
+    category: 'party',
+  },
+  {
+    id: 4,
+    storeId: 'bellavie',
+    name: 'A-Line Dress',
+    price: 55,
+    image: '/product-4.jpg',
+    category: 'casual',
+  },
+  {
+    id: 5,
+    storeId: 'bellavie',
+    name: 'Shift Dress',
+    price: 50,
+    image: '/product-5.jpg',
+    category: 'formal',
+    isNew: true,
+  },
+  {
+    id: 6,
+    storeId: 'bellavie',
+    name: 'Wrap Dress',
+    price: 60,
+    image: '/product-6.jpg',
+    category: 'party',
+  },
+  {
+    id: 7,
+    storeId: 'bellavie',
+    name: 'Shirt Dress',
+    price: 48,
+    image: '/product-7.jpg',
+    category: 'casual',
+  },
+  {
+    id: 8,
+    storeId: 'bellavie',
+    name: 'Off-Shoulder Dress',
+    price: 70,
+    image: '/product-8.jpg',
+    category: 'party',
+    isNew: true,
+  },
+  // UrbanEdge Products (Streetwear)
+  {
+    id: 101,
+    storeId: 'urbanedge',
+    name: 'Oversized Hoodie',
+    price: 55,
+    originalPrice: 70,
+    image: '/urban-product-1.jpg',
+    category: 'casual',
+    isSale: true,
+  },
+  {
+    id: 102,
+    storeId: 'urbanedge',
+    name: 'Cargo Pants',
+    price: 65,
+    image: '/urban-product-2.jpg',
+    category: 'casual',
+    isNew: true,
+  },
+  {
+    id: 103,
+    storeId: 'urbanedge',
+    name: 'Graphic Tee',
+    price: 35,
+    image: '/urban-product-3.jpg',
+    category: 'casual',
+  },
+  {
+    id: 104,
+    storeId: 'urbanedge',
+    name: 'Bomber Jacket',
+    price: 85,
+    image: '/urban-product-4.jpg',
+    category: 'outerwear',
+  },
+  {
+    id: 105,
+    storeId: 'urbanedge',
+    name: 'Street Sneakers',
+    price: 95,
+    image: '/urban-product-5.jpg',
+    category: 'footwear',
+    isNew: true,
+  },
+  {
+    id: 106,
+    storeId: 'urbanedge',
+    name: 'Denim Jacket',
+    price: 75,
+    image: '/urban-product-6.jpg',
+    category: 'outerwear',
+  },
+  {
+    id: 107,
+    storeId: 'urbanedge',
+    name: 'Track Pants',
+    price: 50,
+    image: '/urban-product-7.jpg',
+    category: 'casual',
+  },
+  {
+    id: 108,
+    storeId: 'urbanedge',
+    name: 'Bucket Hat',
+    price: 25,
+    image: '/urban-product-8.jpg',
+    category: 'accessories',
+    isNew: true,
+  },
+  // Bohemian Soul Products (Boho Style)
+  {
+    id: 201,
+    storeId: 'bohemiansoul',
+    name: 'Embroidered Tunic',
+    price: 58,
+    originalPrice: 72,
+    image: '/boho-product-1.jpg',
+    category: 'tops',
+    isSale: true,
+  },
+  {
+    id: 202,
+    storeId: 'bohemiansoul',
+    name: 'Maxi Skirt',
+    price: 48,
+    image: '/boho-product-2.jpg',
+    category: 'bottoms',
+    isNew: true,
+  },
+  {
+    id: 203,
+    storeId: 'bohemiansoul',
+    name: 'Crochet Top',
+    price: 42,
+    image: '/boho-product-3.jpg',
+    category: 'tops',
+  },
+  {
+    id: 204,
+    storeId: 'bohemiansoul',
+    name: 'Flare Pants',
+    price: 55,
+    image: '/boho-product-4.jpg',
+    category: 'bottoms',
+  },
+  {
+    id: 205,
+    storeId: 'bohemiansoul',
+    name: 'Kimono Cardigan',
+    price: 62,
+    image: '/boho-product-5.jpg',
+    category: 'outerwear',
+    isNew: true,
+  },
+  {
+    id: 206,
+    storeId: 'bohemiansoul',
+    name: 'Beaded Necklace',
+    price: 28,
+    image: '/boho-product-6.jpg',
+    category: 'accessories',
+  },
+  {
+    id: 207,
+    storeId: 'bohemiansoul',
+    name: 'Peasant Blouse',
+    price: 45,
+    image: '/boho-product-7.jpg',
+    category: 'tops',
+  },
+  {
+    id: 208,
+    storeId: 'bohemiansoul',
+    name: 'Fringe Bag',
+    price: 38,
+    image: '/boho-product-8.jpg',
+    category: 'accessories',
+    isNew: true,
+  },
+];
+
+// Testimonials for each store
+export const allTestimonials: Testimonial[] = [
+  // BellaVie Testimonials
+  {
+    id: 1,
+    storeId: 'bellavie',
+    name: 'Sarah Johnson',
+    role: 'Verified Buyer',
+    avatar: '/avatar-1.jpg',
+    content: 'The quality of these dresses exceeded my expectations. The fabric is luxurious and the fit is perfect. I\'ve received so many compliments!',
+    rating: 5,
+  },
+  {
+    id: 2,
+    storeId: 'bellavie',
+    name: 'Emily Davis',
+    role: 'Verified Buyer',
+    avatar: '/avatar-2.jpg',
+    content: 'Finally found a brand that understands modern elegance. Every piece I\'ve ordered has become a wardrobe favorite.',
+    rating: 5,
+  },
+  {
+    id: 3,
+    storeId: 'bellavie',
+    name: 'Michael Brown',
+    role: 'Verified Buyer',
+    avatar: '/avatar-3.jpg',
+    content: 'Bought a dress for my wife\'s anniversary and she absolutely loved it. The packaging was beautiful and the dress was stunning.',
+    rating: 5,
+  },
+  // UrbanEdge Testimonials
+  {
+    id: 101,
+    storeId: 'urbanedge',
+    name: 'Jake Miller',
+    role: 'Verified Buyer',
+    avatar: '/urban-avatar-1.jpg',
+    content: 'UrbanEdge gets it. The fit is perfect, the designs are fire, and I always get asked where I got my clothes.',
+    rating: 5,
+  },
+  {
+    id: 102,
+    storeId: 'urbanedge',
+    name: 'Aisha Patel',
+    role: 'Verified Buyer',
+    avatar: '/urban-avatar-2.jpg',
+    content: 'Finally streetwear that actually fits well and looks expensive without breaking the bank. Obsessed!',
+    rating: 5,
+  },
+  {
+    id: 103,
+    storeId: 'urbanedge',
+    name: 'Marcus Chen',
+    role: 'Verified Buyer',
+    avatar: '/urban-avatar-3.jpg',
+    content: 'The limited drops keep me coming back. Love knowing I\'m wearing something not everyone has.',
+    rating: 5,
+  },
+  // Bohemian Soul Testimonials
+  {
+    id: 201,
+    storeId: 'bohemiansoul',
+    name: 'Luna Martinez',
+    role: 'Verified Buyer',
+    avatar: '/boho-avatar-1.jpg',
+    content: 'These pieces speak to my soul. You can feel the love and craftsmanship in every stitch. Absolutely magical!',
+    rating: 5,
+  },
+  {
+    id: 202,
+    storeId: 'bohemiansoul',
+    name: 'Willow Thompson',
+    role: 'Verified Buyer',
+    avatar: '/boho-avatar-2.jpg',
+    content: 'As someone who values sustainability, finding Bohemian Soul was a dream. Beautiful clothes that align with my values.',
+    rating: 5,
+  },
+  {
+    id: 203,
+    storeId: 'bohemiansoul',
+    name: 'River Stone',
+    role: 'Verified Buyer',
+    avatar: '/boho-avatar-3.jpg',
+    content: 'The flowing designs are so comfortable and flattering. I feel like myself when I wear these clothes.',
+    rating: 5,
+  },
+];
+
+// Lookbook slides for each store
+export const allLookbookSlides: LookbookSlide[] = [
+  // BellaVie Lookbook
+  {
+    id: 1,
+    storeId: 'bellavie',
+    title: 'Summer Collection 2024',
+    description: 'Embrace the warmth with our breezy summer styles. Light fabrics, vibrant colors, and effortless elegance.',
+    image: '/lookbook-1.jpg',
+    cta: 'Explore Collection',
+  },
+  {
+    id: 2,
+    storeId: 'bellavie',
+    title: 'Evening Elegance',
+    description: 'Sophisticated dresses for your special occasions. Make a statement at every event.',
+    image: '/lookbook-2.jpg',
+    cta: 'View Dresses',
+  },
+  {
+    id: 3,
+    storeId: 'bellavie',
+    title: 'Casual Chic',
+    description: 'Effortless style for everyday moments. Comfortable, versatile, and always in fashion.',
+    image: '/lookbook-3.jpg',
+    cta: 'Shop Casual',
+  },
+  // UrbanEdge Lookbook
+  {
+    id: 101,
+    storeId: 'urbanedge',
+    title: 'City Nights',
+    description: 'After-dark essentials for the urban explorer. Bold silhouettes that command attention.',
+    image: '/urban-lookbook-1.jpg',
+    cta: 'Shop Nightwear',
+  },
+  {
+    id: 102,
+    storeId: 'urbanedge',
+    title: 'Street Essentials',
+    description: 'The foundation of every urban wardrobe. Quality basics that never go out of style.',
+    image: '/urban-lookbook-2.jpg',
+    cta: 'Shop Essentials',
+  },
+  {
+    id: 103,
+    storeId: 'urbanedge',
+    title: 'Limited Drop',
+    description: 'Exclusive pieces available for a limited time only. Don\'t miss out.',
+    image: '/urban-lookbook-3.jpg',
+    cta: 'Shop Limited',
+  },
+  // Bohemian Soul Lookbook
+  {
+    id: 201,
+    storeId: 'bohemiansoul',
+    title: 'Desert Dreams',
+    description: 'Earth tones and flowing fabrics inspired by golden sunsets and endless horizons.',
+    image: '/boho-lookbook-1.jpg',
+    cta: 'Explore',
+  },
+  {
+    id: 202,
+    storeId: 'bohemiansoul',
+    title: 'Festival Season',
+    description: 'Express your free spirit with our festival collection. Dance, dream, and be free.',
+    image: '/boho-lookbook-2.jpg',
+    cta: 'Shop Festival',
+  },
+  {
+    id: 203,
+    storeId: 'bohemiansoul',
+    title: 'Artisan Collection',
+    description: 'Handcrafted pieces made by skilled artisans using traditional techniques passed down through generations.',
+    image: '/boho-lookbook-3.jpg',
+    cta: 'Shop Artisan',
+  },
+];
+
+// Helper functions
+export const getStoreById = (id: string): Store | undefined => {
+  return stores.find((store) => store.id === id);
+};
+
+export const getProductsByStore = (storeId: string): Product[] => {
+  return allProducts.filter((product) => product.storeId === storeId);
+};
+
+export const getTestimonialsByStore = (storeId: string): Testimonial[] => {
+  return allTestimonials.filter((testimonial) => testimonial.storeId === storeId);
+};
+
+export const getLookbookByStore = (storeId: string): LookbookSlide[] => {
+  return allLookbookSlides.filter((slide) => slide.storeId === storeId);
+};
